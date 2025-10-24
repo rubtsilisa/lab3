@@ -1,0 +1,69 @@
+/* ========== Mobile-first стили ========== */
+* { box-sizing: border-box; }
+html,body { margin:0; padding:0; font-family: Arial, sans-serif; background:#f0e6dd; color:#111; }
+
+.container { max-width:1100px; margin:0 auto; padding:12px; }
+
+/* Шапка */
+header { background:#4a90e2; color:#fff; padding:14px 12px; text-align:center; }
+.header-inner { display:flex; flex-direction:column; align-items:center; gap:8px; }
+.logo { max-width:120px; height:auto; display:block; }
+
+/* Меню - на мобильных вертикальное */
+nav { background:#333; }
+nav ul { list-style:none; margin:0; padding:10px; display:flex; flex-direction:column; gap:8px; }
+nav a { color:#fff; text-decoration:none; font-weight:bold; display:block; padding:10px; text-align:center; border-radius:6px; }
+nav a:hover { color:#4a90e2; }
+
+/* Основной контейнер (mobile: колонка) */
+#main-aside-wrapper { display:flex; flex-direction:column; gap:16px; padding:12px 0; }
+
+/* MAIN и ASIDE общий стиль */
+main, aside { background:#fff; padding:14px; border-radius:8px; box-shadow:0 1px 4px rgba(0,0,0,0.05); }
+
+/* Секция с ссылками и таблицей.
+   В коде ul идёт ПЕРВЫМ, table ВТОРЫМ.
+   На мобильном мы хотим визуально показать таблицу выше — используем order. */
+.links-table { display:flex; flex-direction:column; gap:12px; }
+
+/* Список ссылок */
+#inks1 { order: 1; list-style:none; padding:0; margin:0; }
+#inks1 li { margin-bottom:8px; }
+#inks1 a { display:block; padding:8px; background:#eef6ff; border-radius:6px; color:#0b5a8a; }
+
+/* Таблица — визуально выше на мобильных (order:-1) */
+#tabl { order: -1; width:100%; border-collapse:collapse; background:#fff; box-shadow:0 0 8px rgba(0,0,0,0.06); }
+#tabl th, #tabl td { border:1px solid #ddd; padding:10px; text-align:center; }
+#tabl th { background:#4a90e2; color:#fff; }
+
+/* Формы */
+form { display:flex; flex-direction:column; gap:8px; }
+input, select, textarea, button { font-family:inherit; padding:8px; border:1px solid #cfcfcf; border-radius:6px; }
+button { background:#4a90e2; color:#fff; border:none; cursor:pointer; padding:10px; }
+button:hover { opacity:0.95; }
+
+/* Футер */
+footer { background:#222; color:#bbb; text-align:center; padding:12px; margin-top:18px; }
+
+/* Делать картинки отзывчивыми */
+img { max-width:100%; height:auto; display:block; }
+
+/* ========== Стили для больших экранов (tablet / desktop) ========== */
+@media screen and (min-width:800px) {
+  /* Меню — в одну строку */
+  nav ul { flex-direction:row; justify-content:center; gap:20px; padding:12px 0; }
+
+  /* Основной контейнер — main и aside рядом */
+  #main-aside-wrapper { flex-direction:row; align-items:flex-start; gap:20px; padding:20px 0; }
+  main { flex:3; }
+  aside { flex:1; max-width:320px; }
+
+  /* Внутри links-table: горизонтально — список слева, таблица справа */
+  .links-table { flex-direction:row; align-items:flex-start; }
+  #inks1 { order:0; width:260px; margin-right:16px; }
+  #tabl { order:0; width:auto; }
+
+  /* Таблица может занимать всю ширину блока main */
+  #tabl { width:100%; }
+}
+
