@@ -66,8 +66,3 @@ footer {
 footer .container {
   text-align: left;
 }
-
-/* ТЕСТОВЫЙ СТИЛЬ - УДАЛИТЬ ПОСЛЕ ПРОВЕРКИ */
-header {
-  background: red !important;
-}
