@@ -4,11 +4,12 @@ html,body { margin:0; padding:0; font-family: Arial, sans-serif; background:#f0e
 
 .container { max-width:1100px; margin:0 auto; padding:12px; }
 
+/* ШАПКА - логотип и название слева, меню справа - БЕЗ ОГРАНИЧЕНИЙ */
 header {
   background: #4a90e2;
   color: #fff;
   padding: 0;
-  width: 100%; /* Растягивается на всю ширину */
+  width: 100%;
 }
 
 .header-content {
@@ -16,6 +17,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 15px 20px;
+  /* НЕТ ограничений по ширине - растягивается на всю ширину */
 }
 
 .logo-title {
@@ -93,17 +95,19 @@ input, select, textarea, button { font-family:inherit; padding:8px; border:1px s
 button { background:#4a90e2; color:#fff; border:none; cursor:pointer; padding:10px; }
 button:hover { opacity:0.95; }
 
+/* Футер - текст слева - БЕЗ ОГРАНИЧЕНИЙ */
 footer {
   background:#222;
   color:#bbb;
   padding: 15px 0;
   margin-top: 20px;
-  width: 100%; /* Растягивается на всю ширину */
+  width: 100%;
 }
 
-footer .container {
-  text-align: left;
+.footer-content {
   padding: 0 20px;
+  text-align: left;
+  /* НЕТ ограничений по ширине - растягивается на всю ширину */
 }
 
 /* Делать картинки отзывчивыми */
@@ -118,9 +122,9 @@ img { max-width:100%; height:auto; display:block; }
     gap:20px; 
   }
 
-  /* Шапка на десктопе - добавляем больше отступов */
+  /* Шапка на десктопе - больше отступов */
   .header-content {
-    padding: 15px 40px; /* Больше отступов по бокам на больших экранах */
+    padding: 15px 40px;
   }
 
   /* Основной контейнер — main и aside рядом */
@@ -137,8 +141,8 @@ img { max-width:100%; height:auto; display:block; }
   #tabl { width:100%; }
 
   /* Подвал на десктопе */
-  footer .container {
-    padding: 0 40px; /* Больше отступов по бокам на больших экранах */
+  .footer-content {
+    padding: 0 40px;
   }
 }
 
@@ -153,5 +157,9 @@ img { max-width:100%; height:auto; display:block; }
   nav ul {
     flex-wrap: wrap;
     justify-content: center;
+  }
+  
+  .footer-content {
+    text-align: center;
   }
 }
