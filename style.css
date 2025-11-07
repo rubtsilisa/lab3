@@ -17,7 +17,6 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 15px 20px;
-  /* НЕТ ограничений по ширине - растягивается на всю ширину */
 }
 
 .logo-title {
@@ -104,17 +103,56 @@ footer {
   width: 100%;
 }
 
-.footer-content {
-  padding: 0 20px;
+footer .container {
   text-align: left;
-  /* НЕТ ограничений по ширине - растягивается на всю ширину */
+  padding: 0 20px;
 }
 
 /* Делать картинки отзывчивыми */
 img { max-width:100%; height:auto; display:block; }
 
+/* ========== Стили для мобильных ========== */
+@media screen and (max-width: 768px) {
+  /* Шапка на мобильных - всё в колонку */
+  .header-content {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+  
+  /* Меню на мобильных - в колонку */
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+  
+  nav a {
+    display: block;
+    text-align: center;
+    padding: 12px;
+    background-color: rgba(255,255,255,0.1);
+  }
+  
+  /* Логотип и название по центру на мобильных */
+  .logo-title {
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  header h1 {
+    font-size: 20px;
+  }
+  
+  /* Подвал на мобильных - текст по центру */
+  footer .container {
+    text-align: center;
+  }
+}
+
 /* ========== Стили для больших экранов (tablet / desktop) ========== */
-@media screen and (min-width:800px) {
+@media screen and (min-width: 769px) {
   /* Меню — в одну строку */
   nav ul { 
     flex-direction:row; 
@@ -141,25 +179,7 @@ img { max-width:100%; height:auto; display:block; }
   #tabl { width:100%; }
 
   /* Подвал на десктопе */
-  .footer-content {
+  footer .container {
     padding: 0 40px;
-  }
-}
-
-/* ========== Стили для мобильных ========== */
-@media screen and (max-width:799px) {
-  .header-content {
-    flex-direction: column;
-    gap: 15px;
-    text-align: center;
-  }
-  
-  nav ul {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  .footer-content {
-    text-align: center;
   }
 }
